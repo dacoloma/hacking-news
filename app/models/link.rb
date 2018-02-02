@@ -1,6 +1,6 @@
 class Link < ApplicationRecord
   belongs_to :user
-  has_many :comments, as: :commentable #, dependent: :destroy
+  has_many :comments, as: :commentable, dependent: :delete_all
 
   validates :url, presence: true , length: {maximum: 200}
 # j'ai rajouté une gem pour la validation d'URL  => cf. README.md
